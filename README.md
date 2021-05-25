@@ -1,4 +1,9 @@
 # flutter_flavor
+
+
+## Page that has been completed
+
+![Screen Shot 2021-05-26 at 4 14 32 AM](https://user-images.githubusercontent.com/36778896/119569388-e22b3480-bdd8-11eb-8148-e5cb70bae880.png)
         
 #Run app in `dev` environment
     flutter run -t lib/main_dev.dart  --flavor=dev --enable-software-rendering
