@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_flavor/routes/app_routes.dart';
+import 'package:flutter_flavor/utils/theme.dart';
 import 'package:flutter_flavor/views/widgets/flavor_banner.dart';
 
 class AppIndex extends StatelessWidget {
@@ -17,11 +19,9 @@ class AppIndex extends StatelessWidget {
         },
         child: MaterialApp(
           debugShowCheckedModeBanner: true,
-          home: Scaffold(
-            body: Center(
-              child: Text("Hello World"),
-            ),
-          ),
+          initialRoute: '/',
+          onGenerateRoute: generateRoute,
+          theme: myTheme,
         ),
       ),
     );
