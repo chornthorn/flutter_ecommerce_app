@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_flavor/views/widgets/default_button_custom.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Body extends StatefulWidget {
@@ -105,22 +106,13 @@ class _BodyState extends State<Body> {
             ),
           ),
           Spacer(flex: 2),
-          SizedBox(
-            width: double.infinity,
-            height: 50,
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed<void>('/sign_up');
-              },
-              child: Text(
-                "Get Started!",
-                style: Theme.of(context)
-                    .primaryTextTheme
-                    .subtitle2
-                    .copyWith(fontSize: 16),
-              ),
-            ),
+          DefaultButton(
+            label: 'Get Started!',
+            onPressed: () {
+              Navigator.of(context).pushNamed<void>('/sign_up');
+            },
           ),
+          Spacer(),
         ],
       ),
     );

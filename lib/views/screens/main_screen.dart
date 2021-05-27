@@ -1,9 +1,11 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_flavor/views/screens/places/places_screen.dart';
+import 'package:flutter_flavor/views/screens/home/home_screen.dart';
 import 'package:flutter_flavor/views/screens/profiles/profile_screen.dart';
+import 'package:flutter_flavor/views/screens/search/search_screen.dart';
 import 'package:flutter_flavor/views/screens/settings/setting_screen.dart';
-import 'package:flutter_flavor/views/screens/wallets/wallet_screen.dart';
+
+import 'favorites/favorite_screen.dart';
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key key}) : super(key: key);
@@ -14,9 +16,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   final _pageList = [
-    WalletScreen(),
-    PlacesScreen(),
+    HomeScreen(),
+    SearchScreen(),
     ProfileScreen(),
+    FavoriteScreen(),
     SettingScreen(),
   ];
   int _pageIndex = 0;
@@ -45,24 +48,29 @@ class _MainScreenState extends State<MainScreen> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        unselectedItemColor: Color(0xff7FA7A0),
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         selectedFontSize: 12,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_balance_wallet),
-            label: "Wallet",
+            icon: Icon(Icons.home),
+            label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.store),
-            label: "Places",
+            icon: Icon(Icons.search),
+            label: "Search",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "Profile",
+            icon: Icon(Icons.shopping_cart),
+            label: "Shopping",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: "Setting",
+            icon: Icon(Icons.favorite),
+            label: "Favorite",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: "Account",
           ),
         ],
       ),

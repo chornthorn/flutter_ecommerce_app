@@ -13,6 +13,7 @@ class _WalletScreenState extends State<WalletScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         title: Text(
           "My Bank",
@@ -29,8 +30,7 @@ class _WalletScreenState extends State<WalletScreen>
               color: Colors.black,
             ),
             onPressed: () {
-              Navigator.of(context)
-                  .pushNamed<void>('/home', arguments: "Bong Thorn");
+              Navigator.of(context).pushNamed<void>('/home');
             },
           ),
         ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 final ThemeData myTheme = ThemeData(
+  visualDensity: VisualDensity.adaptivePlatformDensity,
   primarySwatch: Colors.brown,
   brightness: Brightness.light,
   primaryColor: Color(0xff795548),

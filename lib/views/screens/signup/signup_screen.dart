@@ -9,7 +9,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(color: Theme.of(context).iconTheme.color),
+        automaticallyImplyLeading: false,
         title: Text("Sign up"),
       ),
       body: Body(),
