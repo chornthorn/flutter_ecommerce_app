@@ -18,55 +18,69 @@ class ProductStyleBaseItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        width: double.infinity,
-        height: 200,
-        padding: EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade300.withOpacity(0.5),
-              spreadRadius: 3.5,
-              blurRadius: 8,
-              offset: Offset(0, 5),
-            ),
-          ],
-        ),
-        child: Column(
-          children: [
-            Image.asset(srcImg, width: 100),
-            Spacer(),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    name,
-                    style: Theme.of(context).textTheme.subtitle1,
-                    maxLines: 1,
-                  ),
-                ),
-                GestureDetector(
-                  child: Icon(Icons.favorite, color: Colors.red.shade800),
-                  onTap: love,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(16),
+            margin: EdgeInsets.only(top: 45),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade300.withOpacity(0.5),
+                  spreadRadius: 3.5,
+                  blurRadius: 8,
+                  offset: Offset(0, 5),
                 ),
               ],
             ),
-            VtSpace(8),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    "\$$price",
-                    style: Theme.of(context).textTheme.subtitle1,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          name,
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyText2
+                              .copyWith(fontSize: 16),
+                          maxLines: 1,
+                        ),
+                      ),
+                      GestureDetector(
+                        child: Icon(Icons.favorite, color: Colors.red.shade800),
+                        onTap: love,
+                      ),
+                    ],
                   ),
-                ),
-                GestureDetector(child: Icon(Icons.thumb_down), onTap: like),
-              ],
+                  VtSpace(8),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "\$$price",
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
+                      ),
+                      GestureDetector(
+                          child: Icon(Icons.thumb_down), onTap: like),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            top: 0,
+            child: Image.asset(srcImg, width: 100),
+          ),
+        ],
       ),
     );
   }

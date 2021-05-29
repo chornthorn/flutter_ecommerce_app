@@ -412,8 +412,8 @@ final ThemeData myTheme = ThemeData(
   ),
   tabBarTheme: TabBarTheme(
     indicatorSize: TabBarIndicatorSize.tab,
-    labelColor: Color(0xffffffff),
-    unselectedLabelColor: Color(0xb2ffffff),
+    labelColor: Color(0xff795548),
+    unselectedLabelColor: Color(0xff999999),
   ),
   chipTheme: ChipThemeData(
     backgroundColor: Color(0x1f000000),

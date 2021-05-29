@@ -17,50 +17,61 @@ class ProductNewTrendItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        width: double.infinity,
-        height: 200,
-        padding: EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade300.withOpacity(0.5),
-              spreadRadius: 3.5,
-              blurRadius: 8,
-              offset: Offset(0, 5),
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(14),
+            margin: EdgeInsets.only(top: 45),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade300.withOpacity(0.5),
+                  spreadRadius: 3.5,
+                  blurRadius: 8,
+                  offset: Offset(0, 5),
+                ),
+              ],
             ),
-          ],
-        ),
-        child: Column(
-          children: [
-            Image.asset(srcImg, width: 90),
-            Spacer(),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
                     name,
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText2
+                        .copyWith(fontSize: 16),
                   ),
-                ),
-              ],
-            ),
-            VtSpace(8),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    "\$$price",
-                    style: Theme.of(context).textTheme.headline5,
+                  VtSpace(8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "\$$price",
+                        style: Theme.of(context)
+                            .textTheme
+                            .subtitle1
+                            .copyWith(fontSize: 18),
+                      ),
+                      GestureDetector(child: Icon(Icons.favorite), onTap: love),
+                    ],
                   ),
-                ),
-                GestureDetector(child: Icon(Icons.favorite), onTap: love),
-              ],
+                ],
+              ),
             ),
-          ],
-        ),
+          ),
+          Positioned(
+            top: 0,
+            child: Image.asset(srcImg, width: 90),
+          ),
+        ],
       ),
     );
   }

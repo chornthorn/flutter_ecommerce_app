@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_flavor/utils/components/spacers.dart';
 
-class ProductItemCard extends StatelessWidget {
-  const ProductItemCard({
+class ProductRecentItemCard extends StatelessWidget {
+  const ProductRecentItemCard({
     Key key,
     @required this.name,
     this.subtitle = "",
@@ -37,6 +37,16 @@ class ProductItemCard extends StatelessWidget {
               padding: const EdgeInsets.only(top: 65),
               child: Column(
                 children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Icon(
+                        Icons.favorite,
+                        color: Colors.red.shade800,
+                      )
+                    ],
+                  ),
+                  VtSpace(5),
                   Text(
                     name,
                     style: Theme.of(context).textTheme.subtitle1,

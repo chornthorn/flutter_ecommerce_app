@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_flavor/utils/components/spacers.dart';
 
 import 'components/product_item_card.dart';
+import 'components/product_recent_item_card.dart';
 import 'components/product_style_base_item_card.dart';
 import 'components/saved_item_card.dart';
 import 'components/slide_promote_card.dart';
@@ -86,13 +87,13 @@ class HomeScreen extends StatelessWidget {
                   VtSpace(16),
                   Row(
                     children: [
-                      ProductItemCard(
-                        name: "Sandals",
+                      ProductRecentItemCard(
+                        name: "Pull&Bear slim fit",
                         subtitle: "Stay cool",
                         srcImg: "assets/images/products/product_06.png",
                       ),
                       HzSpace(16),
-                      ProductItemCard(
+                      ProductRecentItemCard(
                         name: "Summer co-ords",
                         subtitle: "Just add kicks",
                         srcImg: "assets/images/products/product_07.png",
@@ -162,12 +163,14 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'Styles based on your shopping habits',
-                        style: Theme.of(context).textTheme.subtitle1.copyWith(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                            ),
+                      Expanded(
+                        child: Text(
+                          'Styles based on your shopping habits',
+                          style: Theme.of(context).textTheme.subtitle1.copyWith(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                        ),
                       ),
                     ],
                   ),

@@ -1,9 +1,9 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_flavor/views/screens/accounts/account_screen.dart';
 import 'package:flutter_flavor/views/screens/home/home_screen.dart';
 import 'package:flutter_flavor/views/screens/profiles/profile_screen.dart';
 import 'package:flutter_flavor/views/screens/search/search_screen.dart';
-import 'package:flutter_flavor/views/screens/settings/setting_screen.dart';
 
 import 'favorites/favorite_screen.dart';
 
@@ -20,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
     SearchScreen(),
     ProfileScreen(),
     FavoriteScreen(),
-    SettingScreen(),
+    AccountScreen(),
   ];
   int _pageIndex = 0;
   @override

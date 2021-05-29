@@ -69,7 +69,7 @@ class _NewTrendPageState extends State<NewTrendPage> {
                     childAspectRatio: (2 / 2),
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
-                    padding: EdgeInsets.all(10.0),
+                    padding: EdgeInsets.all(10),
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     maxCrossAxisExtent: 250,

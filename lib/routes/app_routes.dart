@@ -1,6 +1,13 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_flavor/views/screens/accounts/account_screen.dart';
+import 'package:flutter_flavor/views/screens/accounts/add_payment_page.dart';
+import 'package:flutter_flavor/views/screens/accounts/gitf_voucher_page.dart';
+import 'package:flutter_flavor/views/screens/accounts/my_details_page.dart';
+import 'package:flutter_flavor/views/screens/accounts/my_order_page.dart';
+import 'package:flutter_flavor/views/screens/accounts/notification_page.dart';
+import 'package:flutter_flavor/views/screens/accounts/setting_page.dart';
 import 'package:flutter_flavor/views/screens/home/components/new_trend_page.dart';
 import 'package:flutter_flavor/views/screens/home/components/price_filter_page.dart';
 import 'package:flutter_flavor/views/screens/home/components/product_filter_page.dart';
@@ -30,6 +37,20 @@ Route generateRoute(RouteSettings routeSettings) {
       return pageRoute(PriceFilterPage());
     case '/search_page':
       return pageRoute(SearchScreen());
+    case '/account':
+      return pageRoute(AccountScreen());
+    case '/my_order':
+      return pageRoute(MyOrderPage());
+    case '/my_details':
+      return pageRoute(MyDetailsPage());
+    case '/add_payment':
+      return pageRoute(AddPaymentPage());
+    case '/setting':
+      return pageRoute(SettingPage());
+    case '/notifications':
+      return pageRoute(NotificationsPage());
+    case '/gift_voucher':
+      return pageRoute(GiftVoucherPage());
   }
 
   return generateRoute(routeSettings);
