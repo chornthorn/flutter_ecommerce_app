@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_flavor/utils/components/spacers.dart';
 import 'package:flutter_flavor/views/widgets/default_button_custom.dart';
+import 'package:flutter_flavor/views/widgets/default_outlined_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'components/voucher_help_option.dart';
+import 'components/voucher_list_tile.dart';
 
 class GiftVoucherPage extends StatelessWidget {
   const GiftVoucherPage({Key key}) : super(key: key);
@@ -88,10 +92,42 @@ class GiftVoucherPage extends StatelessWidget {
                             VtSpace(16),
                             DefaultButton(
                               label: 'Add gift cards',
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed('/add_gift_voucher_page');
+                              },
+                            ),
+                            VtSpace(16),
+                            DefaultOutlinedButton(
+                              title: 'Buy gift voucher',
                               onPressed: () {},
                             ),
                           ],
                         ),
+                      ),
+                      VoucherHelpOption(
+                        title: "Need help with these options?",
+                        items: [
+                          VoucherListTile(
+                            title: 'What is a Gift Card?',
+                            onPressed: () {
+                              print("Hello");
+                            },
+                          ),
+                          VoucherListTile(
+                            title: 'What is a Gift Voucher?',
+                            onPressed: () {
+                              print("Hello");
+                            },
+                          ),
+                          VoucherListTile(
+                            title: 'Gift card/ Voucher FAQs',
+                            isLastIndex: true,
+                            onPressed: () {
+                              print("Hello");
+                            },
+                          ),
+                        ],
                       ),
                     ],
                   ),

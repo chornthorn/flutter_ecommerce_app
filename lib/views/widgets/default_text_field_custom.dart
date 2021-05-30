@@ -28,7 +28,8 @@ class DefaultTextField extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-                color: Theme.of(context).iconTheme.color, width: 1.2),
+                color: Theme.of(context).iconTheme.color.withOpacity(0.6),
+                width: 1),
           ),
           child: TextField(
             controller: controller,
@@ -37,8 +38,10 @@ class DefaultTextField extends StatelessWidget {
               border: InputBorder.none,
               contentPadding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
               hintText: hintText,
-              hintStyle:
-                  Theme.of(context).textTheme.bodyText2.copyWith(fontSize: 16),
+              hintStyle: Theme.of(context).textTheme.bodyText2.copyWith(
+                    fontSize: 16,
+                    color: Colors.grey.withOpacity(0.8),
+                  ),
             ),
           ),
         ),

@@ -87,6 +87,10 @@ class AccountScreen extends StatelessWidget {
                           AccountListTileItem(
                             title: 'Address book',
                             icon: Icons.location_on,
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .pushNamed('/add_book_address');
+                            },
                           ),
                           AccountListTileItem(
                             title: 'Payment methods',

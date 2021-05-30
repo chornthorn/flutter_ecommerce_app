@@ -2,7 +2,11 @@ import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_flavor/views/screens/accounts/account_screen.dart';
+import 'package:flutter_flavor/views/screens/accounts/add_book_address_page.dart';
+import 'package:flutter_flavor/views/screens/accounts/add_gift_voucher_page.dart';
+import 'package:flutter_flavor/views/screens/accounts/add_gift_voucher_page_2.dart';
 import 'package:flutter_flavor/views/screens/accounts/add_payment_page.dart';
+import 'package:flutter_flavor/views/screens/accounts/add_payment_page_2.dart';
 import 'package:flutter_flavor/views/screens/accounts/gitf_voucher_page.dart';
 import 'package:flutter_flavor/views/screens/accounts/my_details_page.dart';
 import 'package:flutter_flavor/views/screens/accounts/my_order_page.dart';
@@ -43,14 +47,22 @@ Route generateRoute(RouteSettings routeSettings) {
       return pageRoute(MyOrderPage());
     case '/my_details':
       return pageRoute(MyDetailsPage());
-    case '/add_payment':
-      return pageRoute(AddPaymentPage());
+    case '/add_book_address':
+      return pageRoute(AddBookAddressPage());
     case '/setting':
       return pageRoute(SettingPage());
     case '/notifications':
       return pageRoute(NotificationsPage());
     case '/gift_voucher':
       return pageRoute(GiftVoucherPage());
+    case '/add_gift_voucher_page':
+      return pageRoute(AddGiftVoucherPage());
+    case '/add_gift_voucher_page_2':
+      return pageRoute(AddGiftVoucherPage2());
+    case '/add_payment':
+      return pageRoute(AddPaymentPage());
+    case '/add_payment_2':
+      return pageRoute(AddPaymentPage2());
   }
 
   return generateRoute(routeSettings);
